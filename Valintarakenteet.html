@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+Enter the year: <input type="number" id="dateEnter">
+
+
+<button id="leapYearButton">Is this a leap year?</button>
+<head>
+    <meta charset="UTF-8">
+    <title>Valintarakenteet</title>
+</head>
+<body>
+<script>
+    //1.
+    pituus = prompt('Anna kuhan pituus(senttimetreinä)');
+    if (pituus>37) {
+        document.write(pituus + '<br/>');
+    }
+    else if (pituus<37){
+        pituus2 = 37-pituus;
+        document.write('Kuha on ' + pituus2 + 'cm liian pieni. Päästä kuha takaisin veteen. <br/>');
+    }
+
+
+    //2.
+    lajitteluhattu = prompt('Oppilaan nimi');
+        document.write(lajitteluhattu + ' olet ');
+    let things = ['Rohkelikko', 'Luihuinen', 'Puuskupuh', 'Korpinkynsi'];
+    let thing = things[Math.floor(Math.random()*things.length)];
+    document.write(thing);
+
+
+    //6.
+    document.getElementById("leapYearButton").onclick = function() {
+
+        let dateEnter = document.getElementById("dateEnter").value;
+
+        if (dateEnter == "") {
+            alert("Please choose a year!");
+        }else{
+            if (dateEnter % 4 !== 0) {
+                alert("It's a common year");
+            }else if (dateEnter % 100 !== 0) {
+                alert("It's a leap year");
+            }else if (dateEnter % 400 !== 0) {
+                alert("It's a common year");
+            }else{
+                alert("It's a leap year");
+            }
+        }
+    };
+</script>
+</body>
+</html>
